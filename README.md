@@ -7,4 +7,4 @@ This repo contains a MuJoCo env for robotic arm to generate trajectory for graps
 
 The animation above demonstrates the robot's trajectory under theoretical calculation and simulations. Some subtle differences can be observed due to the fact that manipulator has complaiant joints and hence cause response delays.
 
-<img src="Img/Tracjectory.png" alt="trajectory" width="600" />
+<img src="Img/Trajectory.png" alt="trajectory" width="600" />
