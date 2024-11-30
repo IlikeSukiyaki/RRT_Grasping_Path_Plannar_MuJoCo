@@ -6,3 +6,5 @@ This repo contains a MuJoCo env for robotic arm to generate trajectory for graps
 ![RRT Robot Motion](Img/rrt_robot_motion_with_transfer.gif)
 
 The animation above demonstrates the robot's trajectory under theoretical calculation and simulations. Some subtle differences can be observed due to the fact that manipulator has complaiant joints and hence cause response delays.
+
+<img src="Img/Tracjectory.png" alt="trajectory" width="600" />
