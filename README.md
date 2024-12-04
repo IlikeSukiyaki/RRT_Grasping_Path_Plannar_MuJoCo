@@ -36,3 +36,8 @@ pip install einops
 pip install h5py
 pip install ipython
 ```
+### Step3: Run the code
+To generate the results, run the following script:
+```
+python rrt_a1-final.py
+```
