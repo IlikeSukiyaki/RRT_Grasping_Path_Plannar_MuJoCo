@@ -6,7 +6,7 @@ This repo contains a MuJoCo environment for a robotic arm to generate a trajecto
 
 <img src="Img/rrt_robot_motion_with_transfer.gif" alt="RRT Robot Motion" width="600" />
 
-For better visualization, please git clone this repo and watch (./rrt_robot_motion_demo.mp4)
+For better visualization, please git clone this repo and watch [rrt_robot_motion_demo.mp4](./rrt_robot_motion_demo.mp4)
 
 
 The animation above demonstrates the robot's trajectory under theoretical calculation and simulations. Some subtle differences can be observed due to the fact that the manipulator has compliant joints, which cause response delays.
