@@ -1,0 +1,32 @@
+<mujoco>
+  <include file="a1_scene_ik.xml"/>
+  <include file="a1_dependencies.xml"/>
+
+  <worldbody>
+    <include file="a1_right_ik.xml" />
+
+    <body mocap="true" name="mocap">
+      <site pos="0.1 0 0" size="0.1 0.002 0.002" type="box" name="mocap_site1" rgba="1 0.33 0.33 1"/>
+      <site pos="0 0.1 0" size="0.002 0.1 0.002" type="box" name="mocap_site2" rgba="0.33 1 0.33 1"/>
+      <site pos="0 0 0.1" size="0.002 0.002 0.1" type="box" name="mocap_site3" rgba="0.33 0.33 1 1"/>
+    </body>
+
+    <!-- <body name="pillar" pos="0.1 0.5 0.2">
+      <geom pos="0 0 0" size="0.04 0.04 0.2" type="box" name="pillar" rgba="0.8 1 0.4 1" 
+      solref="0.001 1" solimp="0.999 0.999 0.001" contype="1" conaffinity="2"/>
+    </body> -->
+
+  </worldbody>
+
+  <actuator>
+        <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/waist" kp="800"  user="1" forcelimited="true" forcerange="-150 150"/>
+        <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/shoulder" kp="1600"  user="1" forcelimited="true" forcerange="-300 300"/>
+        <position ctrllimited="true" ctrlrange="-3 0" joint="a1_right/elbow" kp="800"  user="1" forcelimited="true" forcerange="-100 100"/>
+        <position ctrllimited="true" ctrlrange="-1.5 1.5" joint="a1_right/forearm_roll" kp="100"  user="1" forcelimited="true" forcerange="-100 100"/>
+        <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/wrist_angle" kp="100"  user="1" forcelimited="true" forcerange="-100 100"/>
+        <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/wrist_rotate" kp="100"  user="1" forcelimited="true" forcerange="-100 100"/>
+        <!-- <position ctrllimited="true" ctrlrange="-0.12 0.02" joint="a1_right/left_finger" kp="200"  user="1"/>
+        <position ctrllimited="true" ctrlrange="-0.02 0.12" joint="a1_right/right_finger" kp="200"  user="1"/> -->
+  </actuator>
+
+</mujoco>

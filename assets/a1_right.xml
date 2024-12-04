@@ -1,0 +1,91 @@
+
+<mujocoinclude>
+    <body name="a_right" pos="0.469 0.5 0" euler="0 0 3.1416">
+        <geom type="mesh" mesh="a1_1_base" name="a1_right/1_base" contype="2" conaffinity="1"/>
+
+        <body name="a1_right/shoulder_link" pos="0 0 0.0892">
+            <inertial pos="-1.4403e-06 -0.00074041 0.056573" quat="0.707084 0.00122867 -0.00107609 0.707127" mass="0.095" diaginertia="0.000708573 0.00058101 0.000445827"/>
+            <joint name="a1_right/waist" pos="0 0 0" axis="0 0 1" limited="true" range="-3 3" frictionloss="50" />
+            <geom euler="0 0 0" type="mesh" mesh="a1_2_shoulder" name="a1_right/2_shoulder" contype="2" conaffinity="1"/>
+
+            <!-- <body name="cali_joint1" pos="0 0 0">
+                <site pos="0 0 0" size="0.1 0.003 0.003" type="box" rgba="0 1 0 1"/>
+                <site pos="0 0 0" size="0.003 0.1 0.003" type="box" rgba="0 1 0 1"/>
+                <site pos="0 0 0" size="0.003 0.003 0.1" type="box" rgba="1 0 0 1"/>
+            </body>  -->
+
+            <body name="a1_right/upper_arm_link" pos="0 -0.03 0.0715">
+                <inertial pos="0.23622 0.016356 9.154e-05" quat="0.484393 0.48518 0.524693 0.504639" mass="0.1" diaginertia="0.00761886 0.00757469 0.000578276"/>
+                <joint name="a1_right/shoulder" pos="0 0 0" axis="0 1 0" limited="true" range="-3 3" frictionloss="60" />
+                <geom euler="1.5708 0 -1.5708" type="mesh" mesh="a1_3_upper_arm" name="a1_right/3_upper_arm" contype="2" conaffinity="1"/>
+
+                <!-- <body name="cali_joint2" pos="0 0 0">
+                    <site pos="0 0 0" size="0.1 0.003 0.003" type="box" rgba="0 1 0 1"/>
+                    <site pos="0 0 0" size="0.003 0.1 0.003" type="box" rgba="1 0 0 1"/>
+                    <site pos="0 0 0" size="0.003 0.003 0.1" type="box" rgba="0 1 0 1"/>
+                </body>  -->
+
+                <body name="a1_right/upper_forearm_link" pos="-0.02 0.073 0.35">
+                    <inertial pos="0.054443 0.045347 0.00042807" quat="0.595278 0.471808 -0.522016 0.387995" mass="0.07" diaginertia="0.00149749 0.00144877 0.00053598"/>
+                    <joint name="a1_right/elbow" pos="0 0 0" axis="0 1 0" limited="true" range="-3 0" frictionloss="60" />
+                    <geom euler="-1.5708 0 0" type="mesh" mesh="a1_4_upper_forearm" name="a1_right/4_upper_forearm" contype="2" conaffinity="1"/>
+
+                    <!-- <body name="cali_joint3" pos="0 0 0">
+                        <site pos="0 0 0" size="0.1 0.003 0.003" type="box" rgba="0 1 0 1"/>
+                        <site pos="0 0 0" size="0.003 0.1 0.003" type="box" rgba="1 0 0 1"/>
+                        <site pos="0 0 0" size="0.003 0.003 0.1" type="box" rgba="0 1 0 1"/>
+                    </body>  -->
+                    
+                    <body name="a1_right/lower_forearm_link" pos="0 -0.05 0.07">
+                        <inertial pos="7.6256e-07 -0.0021448 0.27415" quat="0.70651 0.0169198 -0.0168252 0.707301" mass="0.04" diaginertia="0.000101779 9.7042e-05 8.44616e-05"/>
+                        <joint name="a1_right/forearm_roll" pos="0 0 0" axis="1 0 0" limited="true" range="-1.5 1.5" frictionloss="30" />
+                        <geom euler="-1.5708 1.5708 0" type="mesh" mesh="a1_5_lower_forearm" name="a1_right/5_lower_forearm" contype="2" conaffinity="1"/>
+
+                        <!-- <body name="cali_joint4" pos="0 0 0">
+                            <site pos="0 0 0" size="0.1 0.003 0.003" type="box" rgba="1 0 0 1"/>
+                            <site pos="0 0 0" size="0.003 0.1 0.003" type="box" rgba="0 1 0 1"/>
+                            <site pos="0 0 0" size="0.003 0.003 0.1" type="box" rgba="0 1 0 1"/>
+                        </body>  -->
+                        
+                        <body name="a1_right/wrist_link" pos="0.275 -0.03 0.00">
+                            <inertial pos="-3.9997e-06 -0.05431 0.0034482" quat="0.477398 0.87868 0.00338218 -0.000840949" mass="0.03" diaginertia="0.00011332 0.000109027 7.34689e-05"/>
+                            <joint name="a1_right/wrist_angle" pos="0 0 0" axis="0 1 0" limited="true" range="-3 3" frictionloss="30" />
+                            <geom euler="-1.5708 3.1416 1.5708" type="mesh" mesh="a1_6_wrist" name="a1_right/6_wrist" contype="2" conaffinity="1"/>
+
+                            <!-- <body name="cali_joint5" pos="0 0 0">
+                                <site pos="0 0 0" size="0.1 0.003 0.003" type="box" rgba="0 1 0 1"/>
+                                <site pos="0 0 0" size="0.003 0.1 0.003" type="box" rgba="1 0 0 1"/>
+                                <site pos="0 0 0" size="0.003 0.003 0.1" type="box" rgba="0 1 0 1"/>
+                            </body>  -->
+
+                            <body name="a1_right/gripper_link" pos="-0.001 0.025 -0.08">
+                                <inertial pos="2.406e-06 -9.4582e-08 -0.038796" quat="1 -8.0778e-06 -0.000185306 8.09142e-05" mass="0.035" diaginertia="0.00011445 0.00011239 7.4519e-05"/>
+                                <joint name="a1_right/wrist_rotate" pos="0 0 0" axis="0 0 1" limited="true" range="-3 3" frictionloss="30" />
+                                <geom euler="0 3.1416 0" type="mesh" mesh="a1_7_gripper" name="a1_right/7_gripper" contype="2" conaffinity="1"/>
+
+                                <body name="a1_right/left_finger_link" pos="0 0 -0.12">
+                                    <inertial pos="0.017344 -0.0060692 0" quat="0.449364 0.449364 -0.54596 -0.54596" mass="0.034796" diaginertia="2.48003e-05 1.417e-05 1.20797e-05" />
+                                    <!-- <joint name="a1_right/left_finger" pos="0 0 0" axis="1 0 0" type="slide" limited="true" range="-0.12 0.02" frictionloss="30" /> -->
+                                    <geom pos="0.05 0 0" euler="1.5708 0 -1.5708" type="mesh" mesh="a1_8_gripper_finger_left" name="a1_right/a1_8_gripper_finger_left" contype="0" conaffinity="0"/>
+                                    <geom pos="0.05 0 0" euler="1.5708 0 -1.5708" type="mesh" mesh="a1_8_gripper_finger_touch_left" name="a1_right/a1_8_gripper_finger_touch_left" 
+                                    contype="2" conaffinity="1" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001"/>
+                                </body>
+                                
+                                <body name="a1_right/right_finger_link" pos="0 0 -0.12">
+                                    <inertial pos="0.017344 0.0060692 0" quat="0.44937 -0.44937 0.545955 -0.545955" mass="0.034796" diaginertia="2.48002e-05 1.417e-05 1.20798e-05" />
+                                    <!-- <joint name="a1_right/right_finger" pos="0 0 0" axis="1 0 0" type="slide" limited="true" range="-0.02 0.12" frictionloss="30" /> -->
+                                    <geom pos="-0.05 0 0" euler="1.5708 3.1416 -1.5708" type="mesh" mesh="a1_8_gripper_finger_right" name="a1_right/a1_8_gripper_finger_right" contype="0" conaffinity="0"/>
+                                    <geom pos="-0.05 0 0" euler="1.5708 3.1416 -1.5708" type="mesh" mesh="a1_8_gripper_finger_touch_right" name="a1_right/a1_8_gripper_finger_touch_right" 
+                                    contype="2" conaffinity="1" condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001"/>
+                                </body>
+
+                            
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </body>
+
+</mujocoinclude>

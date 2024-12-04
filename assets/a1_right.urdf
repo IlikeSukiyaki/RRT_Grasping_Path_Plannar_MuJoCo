@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="A1_URDF_0607_0028">
+
+  <link
+    name="base_link">
+  </link>
+  
+  <link
+    name="arm_seg1">
+  </link>
+  
+  <joint
+    name="arm_joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0892"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="arm_seg1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3"
+      upper="3"
+      effort="40"
+      velocity="20.944" />
+  </joint>
+  
+  <link
+    name="arm_seg2">
+  </link>
+  
+  <joint
+    name="arm_joint2"
+    type="revolute">
+    <origin
+      xyz="0 -0.03 0.0715"
+      rpy="0 0 0" />
+    <parent
+      link="arm_seg1" />
+    <child
+      link="arm_seg2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3"
+      upper="3"
+      effort="40"
+      velocity="20.944" />
+  </joint>
+  
+  <link
+    name="arm_seg3">
+  </link>
+
+  <joint
+    name="arm_joint3"
+    type="revolute">
+    <origin
+      xyz="-0.02 0.073 0.35"
+      rpy="0 0 0" />
+    <parent
+      link="arm_seg2" />
+    <child
+      link="arm_seg3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3"
+      upper="1"
+      effort="27"
+      velocity="7.5398" />
+  </joint>
+
+  <link
+    name="arm_seg4">
+  </link>
+
+  <joint
+    name="arm_joint4"
+    type="revolute">
+    <origin
+      xyz="0 -0.05 0.07"
+      rpy="0 0 0" />
+    <parent
+      link="arm_seg3" />
+    <child
+      link="arm_seg4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="7"
+      velocity="25.133" />
+  </joint>
+
+  <link
+    name="arm_seg5">
+  </link>
+
+  <joint
+    name="arm_joint5"
+    type="revolute">
+    <origin
+      xyz="0.275 -0.03 0.00"
+      rpy="0 0 0" />
+    <parent
+      link="arm_seg4" />
+    <child
+      link="arm_seg5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3"
+      upper="3"
+      effort="7"
+      velocity="25.133" />
+  </joint>
+
+  <link
+    name="arm_seg6">
+  </link>
+
+  <joint
+    name="arm_joint6"
+    type="revolute">
+    <origin
+      xyz="-0.001 0.025 -0.08"
+      rpy="0 0 0" />
+    <parent
+      link="arm_seg5" />
+    <child
+      link="arm_seg6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3"
+      upper="3"
+      effort="7"
+      velocity="25.133" />
+  </joint>
+</robot>

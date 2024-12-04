@@ -1,0 +1,42 @@
+<mujocoinclude>
+    <!--    <option timestep='0.0025' iterations="50" tolerance="1e-10" solver="Newton" jacobian="dense" cone="elliptic"/>-->
+
+    <asset>
+        <mesh file="tabletop.stl" name="tabletop" scale="0.001 0.002 0.001"/>
+    </asset>
+
+    <visual>
+        <map fogstart="1.5" fogend="5" force="0.1" znear="0.1"/>
+        <quality shadowsize="4096" offsamples="4"/>
+        <headlight ambient="0.4 0.4 0.4"/>
+    </visual>
+
+    <worldbody>
+        <light castshadow="false" directional='true' diffuse='.3 .3 .3' specular='0.3 0.3 0.3' pos='-1 -1 1'
+               dir='1 1 -1'/>
+        <light directional='true' diffuse='.3 .3 .3' specular='0.3 0.3 0.3' pos='1 -1 1' dir='-1 1 -1'/>
+        <light castshadow="false" directional='true' diffuse='.3 .3 .3' specular='0.3 0.3 0.3' pos='0 1 1'
+               dir='0 -1 -1'/>
+
+        <body name="table" pos="0 .4 0">
+            <geom group="1" mesh="tabletop" pos="-0.25 0. 0" euler="0 0 1.5708" type="mesh" conaffinity="1" contype="2"
+                  name="table" rgba="0.2 0.2 0.2 1"/>
+        </body>
+        <body name="midair" pos="0 .6 0.2">
+            <site pos="0 0 0" size="0.01" type="sphere" name="midair" rgba="1 0 0 0"/>
+        </body>
+
+        <!--        <camera name="front" pos="0.4 0.4 0.3" fovy="440" mode="targetbody" target="table" />-->
+        <!--         <camera name="right" pos="0.4 0.4 0.3" fovy="110" quat="0 0 0 1" target="table" />-->
+        <!--         <camera name="back" pos="0 0.6 0.8" fovy="120" mode="targetbody" target="table"/>-->
+        <!--        <camera name="left" pos="0.3 0 0.4" fovy="100" mode="targetbody" target="table"/>-->
+        <!-- Define cameras surrounding the table -->
+        <camera name="front" pos="0 -1 0.5" fovy="80" mode="targetbody" target="table"/>
+        <camera name="right" pos="1 0 0.5" fovy="80" mode="targetbody" target="table"/>
+        <camera name="back" pos="0 1 0.5" fovy="80" mode="targetbody" target="table"/>
+        <camera name="left" pos="-1 0 0.5" fovy="80" mode="targetbody" target="table"/>
+
+    </worldbody>
+
+
+</mujocoinclude>

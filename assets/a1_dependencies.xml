@@ -1,0 +1,18 @@
+<mujocoinclude>
+    <!-- <compiler angle="radian" inertiafromgeom="auto" inertiagrouprange="4 5"/> -->
+    <compiler angle="radian" inertiafromgeom="auto"/>
+    <asset>
+        <mesh name="a1_1_base" file="base_link.STL"/>
+        <mesh name="a1_2_shoulder" file="arm_link1.STL"/>
+        <mesh name="a1_3_upper_arm" file="arm_link2.STL"/>
+        <mesh name="a1_4_upper_forearm" file="arm_link3.STL"/>
+        <mesh name="a1_5_lower_forearm" file="arm_link4.STL"/>
+        <mesh name="a1_6_wrist" file="arm_link5.STL"/>
+        <mesh name="a1_7_gripper" file="arm_link6.STL"/>
+        <mesh name="a1_8_gripper_finger_left" file="finger.STL"/>
+        <mesh name="a1_8_gripper_finger_right" file="finger.STL"/>
+        <mesh name="a1_8_gripper_finger_touch_left" file="finger_touch.STL"/>
+        <mesh name="a1_8_gripper_finger_touch_right" file="finger_touch.STL"/>
+    </asset>
+
+</mujocoinclude>

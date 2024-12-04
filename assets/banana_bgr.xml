@@ -1,0 +1,50 @@
+<mujoco>
+  <option gravity="0 0 -9.81"/>
+  <include file="a1_scene_ik.xml"/>
+  <include file="a1_dependencies.xml"/>
+
+  <asset>
+    <!-- 添加香蕉的 mesh -->
+    <!-- <mesh name="banana_mesh" file="/home/da/PoseCNN-PyTorch/project2_deliver/models/011_banana/textured.obj"/> 
+    <texture name="banana_texture" file="/home/da/PoseCNN-PyTorch/project2_deliver/models/011_banana/texture_map_bgr.png" type="2d"/> -->
+    <mesh name="banana_mesh" file="models/002_master_chef_can/textured.obj" scale="0.6 0.6 0.6"/> 
+    <texture name="banana_texture" file="models/002_master_chef_can/texture_map.png" type="2d"/>
+    <material name="banana_material" texture="banana_texture" specular="1" shininess="1"/>
+  </asset>
+
+  <worldbody>
+    <include file="a1_right_ik.xml" />
+
+    <body mocap="true" name="mocap">
+      <site pos="0.1 0 0" size="0.1 0.002 0.002" type="box" name="mocap_site1" rgba="1 0.33 0.33 1"/>
+      <site pos="0 0.1 0" size="0.002 0.1 0.002" type="box" name="mocap_site2" rgba="0.33 1 0.33 1"/>
+      <site pos="0 0 0.1" size="0.002 0.002 0.1" type="box" name="mocap_site3" rgba="0.33 0.33 1 1"/>
+    </body>
+
+    <body name="banana" pos="0.3 0.4 0.2" quat="0.707 0.707 0. 0"> <!-- 设置香蕉的位置 -->
+      <!-- <joint type="free" name="banana_joint" pos="0 0 0" frictionloss="0.01"/> -->
+      <!-- <inertial pos="0 0 0" mass="0.05" diaginertia="0.002 0.002 0.002" /> -->
+      <geom type="mesh" mesh="banana_mesh" material="banana_material" />
+      <freejoint/>
+      <!-- <geom type="box" size="0.05 0.05 0.05" rgba="0 0 1 1" name="banana_geom"/>  -->
+      <!-- 用于显示的网格  -->
+      <!-- <geom pos="0 0 0"  size="0.02 0.02 0.02" type="mesh" mesh="banana_mesh" name="banana_collision" material="banana_material" 
+      density="1" friction="1 0.005 0.0001" mass="0.5" condim="4" solimp="2 1 0.01" solref="0.01 1" contype="1" conaffinity="2" /> -->
+      
+    </body>
+
+    <body name="pillar" pos="0.0 0.5 0.2">
+      <geom pos="0 0 0" size="0.04 0.04 0.2" type="box" name="pillar" rgba="0.8 1 0.4 1"
+            solref="0.001 1" solimp="0.999 0.999 0.001" contype="1" conaffinity="2"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/waist" kp="800" user="1" forcelimited="true" forcerange="-150 150"/>
+    <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/shoulder" kp="1600" user="1" forcelimited="true" forcerange="-300 300"/>
+    <position ctrllimited="true" ctrlrange="-3 0" joint="a1_right/elbow" kp="800" user="1" forcelimited="true" forcerange="-100 100"/>
+    <position ctrllimited="true" ctrlrange="-1.5 1.5" joint="a1_right/forearm_roll" kp="100" user="1" forcelimited="true" forcerange="-100 100"/>
+    <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/wrist_angle" kp="100" user="1" forcelimited="true" forcerange="-100 100"/>
+    <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/wrist_rotate" kp="100" user="1" forcelimited="true" forcerange="-100 100"/>
+  </actuator>
+</mujoco>
