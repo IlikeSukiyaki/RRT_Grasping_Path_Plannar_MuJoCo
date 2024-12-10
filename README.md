@@ -1,6 +1,6 @@
 # RRT_Grasping_Path_Plannar_MuJoCo
 
-This repo contains a MuJoCo environment for a robotic arm to generate a trajectory for grasping an object within the scene.
+This repo contains a MuJoCo environment for a robotic arm to generate a trajectory for grasping an object within the scene with obstacle avoidance.
 
 ## Visualization
 
