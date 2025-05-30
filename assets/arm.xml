@@ -1,0 +1,29 @@
+<mujoco>
+    <body name="base_link" pos="0.469 0.5 0" euler="0 0 3.1416">
+
+        <body name="shoulder_link" pos="0 0 0.0892">
+            <joint name="waist" type="hinge" pos="0 0 0" axis="0 0 1" limited="true" range="-3 3" frictionloss="50" />
+
+            <body name="upper_arm_link" pos="0 -0.03 0.0715">
+                <joint name="shoulder" type="hinge" pos="0 0 0" axis="0 1 0" limited="true" range="-3 3" frictionloss="60" />
+
+                <body name="upper_forearm_link" pos="-0.02 0.073 0.35">
+                    <joint name="elbow" type="hinge" pos="0 0 0" axis="0 1 0" limited="true" range="-3 0" frictionloss="60" />
+                    
+                    <body name="lower_forearm_link" pos="0 -0.05 0.07">
+                        <joint name="forearm_roll" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-1.5 1.5" frictionloss="30" />
+                        
+                        <body name="wrist_link" pos="0.275 -0.03 0.00">
+                            <joint name="wrist_angle" type="hinge" pos="0 0 0" axis="0 1 0" limited="true" range="-3 3" frictionloss="30" />
+                            
+                            <body name="gripper_link" pos="-0.001 0.025 -0.08">
+                                <joint name="wrist_rotate" type="hinge" pos="0 0 0" axis="0 0 1" limited="true" range="-3 3" frictionloss="30" />
+                                
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </body>
+</mujoco>
