@@ -1,0 +1,40 @@
+<mujoco>
+  <include file="a1_scene.xml"/>
+  <include file="a1_dependencies.xml"/>
+
+  <worldbody>
+    <include file="a1_right.xml" />
+
+    <!-- <body name="box" pos="0.1 0.5 0.05">
+      <joint name="red_box_joint" type="free" frictionloss="0.01" />
+      <inertial pos="0 0 0" mass="0.05" diaginertia="0.002 0.002 0.002" />
+      <geom condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001" pos="0 0 0" size="0.02 0.02 0.02" type="box" name="red_box" rgba="1 0 0 1" contype="2" conaffinity="1"/>
+    </body> -->
+
+    <body name="pillar" pos="0.0 0.5 0.2">
+      <geom pos="0 0 0" size="0.04 0.04 0.2" type="box" name="pillar" rgba="0.8 1 0.4 1" 
+      solref="0.001 1" solimp="0.999 0.999 0.001" contype="1" conaffinity="2"/>
+    </body>
+    <!-- <body name="cube" pos="0.44029869 0.37765565 0.16531477">
+      <geom pos="0 0 0" size="0.35 0.35 0.35" type="box" name="pillar" rgba="1 0 0 1" 
+      solref="0.001 1" solimp="0.999 0.999 0.001" contype="1" conaffinity="2"/>
+    </body> -->
+
+    <!-- Add Red Box -->
+    <body name="red_box" pos="0.2 0.5 0.05">
+      <geom type="box" size="0.05 0.05 0.05" rgba="1 0 0 1" name="red_box_geom"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+        <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/waist" kp="800"  user="1" forcelimited="true" forcerange="-150 150"/>
+        <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/shoulder" kp="500"  user="1" forcelimited="true" forcerange="-300 300"/>
+        <position ctrllimited="true" ctrlrange="-3 0" joint="a1_right/elbow" kp="800"  user="1" forcelimited="true" forcerange="-100 100"/>
+        <position ctrllimited="true" ctrlrange="-1.5 1.5" joint="a1_right/forearm_roll" kp="100"  user="1" forcelimited="true" forcerange="-100 100"/>
+        <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/wrist_angle" kp="100"  user="1" forcelimited="true" forcerange="-100 100"/>
+        <position ctrllimited="true" ctrlrange="-3 3" joint="a1_right/wrist_rotate" kp="100"  user="1" forcelimited="true" forcerange="-100 100"/>
+        <!-- <position ctrllimited="true" ctrlrange="-0.12 0.02" joint="a1_right/left_finger" kp="200"  user="1"/>
+        <position ctrllimited="true" ctrlrange="-0.02 0.12" joint="a1_right/right_finger" kp="200"  user="1"/> -->
+  </actuator>
+
+</mujoco>
